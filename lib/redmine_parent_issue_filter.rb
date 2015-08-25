@@ -16,15 +16,21 @@ module RedmineParentIssueFilter
       # Wrapper around the +available_filters+ to add a new Deliverable filter
       def available_filters_with_parent_id
         @available_filters = available_filters_without_parent_id
+
+        # Collect only issues that have children
+        issue_values = []
+        issue_values += Issue.all.select{ |i| i.children? == true }.collect{|s| [s.to_s, s.id.to_s] }
       
         parent_id_filters = {
           "parent_id" => { 
             :name => l(:field_parent_issue),
-            :type => :integer, 
+            :type => :list, 
+            :values => issue_values,
             :order => @available_filters.size + 1},
           "root_id" => { 
             :name => l(:field_root_issue),
-            :type => :integer, 
+            :type => :list, 
+            :values => issue_values,
             :order => @available_filters.size + 2}
         }
 
