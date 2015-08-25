@@ -8,7 +8,7 @@ Installation
 
 Install the plugin in your Redmine plugins directory, clone this repository as `parent_issue_filter_rs`:
 
-    cd {RAILS_ROOT}/plugins
+    cd {REDMINE_ROOT}/plugins
     git clone https://github.com/r-schmidtke/redmine-parent-issue-filter-rs parent_issue_filter_rs
 
 **note: The directory name must be a `parent_issue_filter_Rs`. Directory name is different, it will fail to run the Plugin.**
