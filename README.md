@@ -3,28 +3,15 @@ Redmine parent issue filter
 
 This a plugin added parent issue filter and root issue filter for the [Redmine](http://www.redmine.org).
 
-Features
---------
-
-Added 2 filters on issues page.
-
-### Parent task(issue) filter
-
-![Screenshot of the root issue filter](screenshots/parent.png)
-
-### Root task(issue) filter
-
-![Screenshot of the root issue filter](screenshots/root.png)
-
 Installation
 ------------
 
-Install the plugin in your Redmine plugins directory, clone this repository as `parent_issue_filter`:
+Install the plugin in your Redmine plugins directory, clone this repository as `parent_issue_filter_rs`:
 
     cd {RAILS_ROOT}/plugins
-    git clone https://github.com/onozaty/redmine-parent-issue-filter.git parent_issue_filter
+    git clone https://github.com/r-schmidtke/redmine-parent-issue-filter-rs
 
-**note: The directory name must be a `parent_issue_filter`. Directory name is different, it will fail to run the Plugin.**
+**note: The directory name must be a `parent_issue_filter_Rs`. Directory name is different, it will fail to run the Plugin.**
 
 Supported versions
 ------------------
