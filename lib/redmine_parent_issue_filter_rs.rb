@@ -18,13 +18,13 @@ module RedmineParentIssueFilter
         @available_filters = available_filters_without_parent_id
 
         # Collect only issues that have children
-        issue_values = []
-        issue_values += Issue.where(id: Issue.select(:parent_id).distinct).collect{|s| [s.to_s, s.id.to_s]}
-      
+        issue_values = []  
+        issue_values += Issue.where(id: Issue.select(:parent_id).distinct.collect{|s| s.parent_id.to_s}).collect{|s| [s.to_s, s.id.to_s]}
+       
         parent_id_filters = {
-          "parent_id" => { 
+          "parent_id" => {
             :name => l(:field_parent_issue),
-            :type => :list, 
+            :type => :list,
             :values => issue_values,
             :order => @available_filters.size + 1},
           "root_id" => { 
