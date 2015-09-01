@@ -22,13 +22,8 @@ module RedmineParentIssueFilter
         issue_values += Issue.where(id: Issue.select(:parent_id).distinct.collect{|s| s.parent_id.to_s}).collect{|s| [s.to_s, s.id.to_s]}
        
         parent_id_filters = {
-          "parent_id" => {
-            :name => l(:field_parent_issue),
-            :type => :list,
-            :values => issue_values,
-            :order => @available_filters.size + 1},
           "root_id" => { 
-            :name => l(:field_root_issue),
+            :name => l(:field_parent_issue),
             :type => :list, 
             :values => issue_values,
             :order => @available_filters.size + 2}
