@@ -1,4 +1,5 @@
 require_dependency 'redmine_parent_issue_filter_rs'
+require_dependency 'parent_issue_filter_rs/hooks'
 
 Redmine::Plugin.register :parent_issue_filter_rs do
   name 'Parent issue filter plugin'

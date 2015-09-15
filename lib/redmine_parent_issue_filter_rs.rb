@@ -1,4 +1,4 @@
-module RedmineParentIssueFilter
+module RedmineParentIssueFilterRs
   module QueryPatch
     def self.included(base) # :nodoc:
       base.send(:include, InstanceMethods)
@@ -36,4 +36,4 @@ module RedmineParentIssueFilter
 end
 
 # Add module to Query
-Query.send(:include, RedmineParentIssueFilter::QueryPatch)
+Query.send(:include, RedmineParentIssueFilterRs::QueryPatch)
