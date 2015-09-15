@@ -3,9 +3,9 @@ Redmine parent issue filter
 
 This a plugin added parent issue filter and root issue filter for the [Redmine](http://www.redmine.org).
 For best results:
-    - Add filter and choose tickets.
-    - Add "Parent Issue" as table collumn under "Options"
-    - Click the collumn name "Parent Issue"
+    * Add filter and choose tickets.
+    * Add "Parent Issue" as table collumn under "Options"
+    * Click the collumn name "Parent Issue"
 
 Installation
 ------------
