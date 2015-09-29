@@ -21,22 +21,6 @@ module RedmineParentIssueFilterRs
         issue_values = []  
         issue_values += Issue.where(id: Issue.select(:parent_id).distinct.collect{|s| s.parent_id.to_s}).collect{|s| [s.to_s, s.id.to_s]}.reverse
 
-        Issue.where.not(parent_id: nil).each do |i|
-          cfield = i.custom_value_for(1)
-          unless cfield == nil then 
-            cfield.value =  '#' + i[:root_id].to_s
-            cfield.save
-          end
-        end
-
-        Issue.where(id: Issue.select(:parent_id).distinct.collect{|s| s.parent_id.to_s}).each do |i|
-          cfield = i.custom_value_for(1)
-          unless cfield == nil then 
-            cfield.value =  '#' + i[:root_id].to_s + ':'
-            cfield.save
-          end
-        end
-       
         parent_id_filters = {
           "root_id" => { 
             :name => l(:field_parent_issue),
