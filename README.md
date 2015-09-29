@@ -5,8 +5,8 @@ This a plugin added parent issue filter and root issue filter for the [Redmine](
 
 For best results:
 * Add filter and choose tickets.
-* Add "Parent Issue" as table collumn under "Options"
-* Click the collumn name "Parent Issue"
+* Add your custom field name as table collumn under "Options"
+* Click the new collumn name two times, to sort in descending order
 
 Installation
 ------------
@@ -17,6 +17,8 @@ Install the plugin in your Redmine plugins directory, clone this repository as `
     git clone https://github.com/r-schmidtke/redmine-parent-issue-filter-rs parent_issue_filter_rs
 
 **note: The directory name must be a `parent_issue_filter_rs`. Directory name is different, it will fail to run the Plugin.**
+
+Create a custom field for Issues and replace the 2 occurences of 'XXXREPLACEXXX' in lib/redmine_parent_issue_filter_rs.rb' with its ID
 
 Supported versions
 ------------------
