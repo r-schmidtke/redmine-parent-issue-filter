@@ -20,6 +20,18 @@ module RedmineParentIssueFilterRs
         # Collect only issues that have children
         issue_values = []  
         issue_values += Issue.where(id: Issue.select(:parent_id).distinct.collect{|s| s.parent_id.to_s}).collect{|s| [s.to_s, s.id.to_s]}.reverse
+
+        Issue.where.not(parent_id: nil).each do |i|
+          cfield = i.custom_value_for(1)
+          cfield.value =  '#' + i[:root_id].to_s
+          cfield.save
+        end
+
+        Issue.where(id: Issue.select(:parent_id).distinct.collect{|s| s.parent_id.to_s}).each do |i|
+          cfield = i.custom_value_for(1)
+          cfield.value =  '#' + i[:root_id].to_s + ':'
+          cfield.save
+        end
        
         parent_id_filters = {
           "root_id" => { 
